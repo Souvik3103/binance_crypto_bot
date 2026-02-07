@@ -1,0 +1,63 @@
+engine and metrics
+
+How You Will Use This (Correctly)
+	1.	Load historical candles for BTC and ETH (same timeframe).
+	2.	Iterate candle by candle, oldest → newest.
+	3.	For each symbol:
+	•	Generate signal using EMATRTrendStrategy
+	•	Call engine.on_candle(...)
+	4.	After loop:
+	•	Call engine.results()
+	•	Call compute_metrics(...)
+
+No vectorized cheating.
+No peeking into the future.
+
+
+
+
+You do not go live unless:
+	•	Trades ≥ 200
+	•	Max drawdown ≤ 8%
+	•	Profit factor ≥ 1.3
+	•	Equity curve is smooth (no cliff drops)
+
+Fail → strategy rejected. No parameter tweaking.
+
+
+1. data/candles.py — Historical Data Loader
+
+Features:
+	•	Binance spot OHLCV
+	•	Local CSV caching
+	•	Deterministic re-runs
+	•	Timeframe-safe
+	•	ARM/Python-3.13 compatible
+
+2. backtest/run_backtest.py — Deterministic Backtest Runner
+
+This is the orchestrator:
+	•	Loads candles
+	•	Aligns BTC + ETH on timestamps
+	•	Feeds strategy → engine candle-by-candle
+	•	Produces final metrics
+
+4. How to Interpret Results (No Self-Deception)
+
+PASS CONDITIONS (ALL REQUIRED)
+	•	Trades ≥ 200
+	•	Max drawdown ≤ 8%
+	•	Profit factor ≥ 1.3
+	•	Equity curve grows smoothly (no cliffs)
+
+FAIL CONDITIONS
+	•	Low trade count → insufficient signal density
+	•	Large drawdown → execution risk too high
+	•	Profit factor < 1.3 → no real edge
+
+If it fails:
+	•	We reject the strategy
+	•	We do NOT tweak indicators
+	•	We either change timeframe or abandon it
+
+That’s how professionals avoid curve-fitting.

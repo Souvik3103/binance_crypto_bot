@@ -1,0 +1,13 @@
+mode: backtest        # backtest | paper | live
+
+risk:
+  risk_per_trade: 0.005
+  max_open_positions: 2
+  daily_drawdown_limit: 0.02
+  weekly_drawdown_limit: 0.05
+
+trading:
+  timeframe: "15m"
+  symbols:
+    - "BTC/USDT"
+    - "ETH/USDT"

@@ -1,0 +1,4 @@
+exchange: binance
+market_type: spot
+rate_limit: true
+timeout_ms: 30000
