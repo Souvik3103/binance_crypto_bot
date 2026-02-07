@@ -52,16 +52,16 @@ Only trade real money after extended observation.
 ## 🧱 Project Structure
 ```bash
 crypto_bot/
-├── backtest/
-├── data/
-├── execution/
-├── monitoring/
-├── risk/
-├── strategy/
-├── main.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+  ├── backtest/
+  ├── data/
+  ├── execution/
+  ├── monitoring/
+  ├── risk/
+  ├── strategy/
+  ├── main.py
+  ├── requirements.txt
+  ├── .gitignore
+  └── README.md
 ```
 ---
 
@@ -83,22 +83,22 @@ cd binance_crypto_bot
 ---
 
 ### 3️⃣ Create Virtual Environment
-
+```bash
 python3 -m venv venv
 source venv/bin/activate
-
+```
 ---
 
 ### 4️⃣ Install Dependencies
-
+```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ## 🔐 Configuration (.env)
 
 Create a `.env` file (**never commit this**):
-
+```bash
 BINANCE_FUTURES_KEY=your_key_here  
 BINANCE_FUTURES_SECRET=your_secret_here  
 
@@ -106,20 +106,20 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id  
 
 chmod 600 .env
-
+```
 ---
 
 ## ▶️ Running the Bot
-
+```bash
 source venv/bin/activate  
 python main.py
-
+```
 ---
 
 ## 🔄 DRY-RUN MODE
-
+```bash
 DRY_RUN = True  
-
+```
 Run for **7–14 days** before real trading.
 
 ---
@@ -148,9 +148,9 @@ The bot can be deployed as a systemd service for:
 ## 🚀 Going Live
 
 Only after extended DRY-RUN validation:
-
+```bash
 DRY_RUN = False  
-
+```
 Start with **₹1,000–₹2,000** only.
 
 ---
