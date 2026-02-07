@@ -50,7 +50,7 @@ Only trade real money after extended observation.
 ---
 
 ## 🧱 Project Structure
-
+```bash
 crypto_bot/
 ├── backtest/
 ├── data/
@@ -62,7 +62,7 @@ crypto_bot/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## 🛠️ Environment Setup (Fresh Machine)
@@ -76,10 +76,10 @@ crypto_bot/
 ---
 
 ### 2️⃣ Clone the Repository
-
+```bash
 git clone https://github.com/your-username/binance_crypto_bot.git
 cd binance_crypto_bot
-
+```
 ---
 
 ### 3️⃣ Create Virtual Environment
