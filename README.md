@@ -118,7 +118,7 @@ python main.py
 ---
 
 ## 🔄 DRY-RUN MODE
-```yaml
+```py
 DRY_RUN = True  
 ```
 Run for **7–14 days** before real trading.
@@ -149,7 +149,7 @@ The bot can be deployed as a systemd service for:
 ## 🚀 Going Live
 
 Only after extended DRY-RUN validation:
-```yaml
+```py
 DRY_RUN = False  
 ```
 Start with **₹1,000–₹2,000** only.
