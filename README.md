@@ -104,7 +104,8 @@ BINANCE_FUTURES_SECRET=your_secret_here
 
 TELEGRAM_BOT_TOKEN=your_bot_token  
 TELEGRAM_CHAT_ID=your_chat_id  
-
+```
+```bash
 chmod 600 .env
 ```
 ---
@@ -117,7 +118,7 @@ python main.py
 ---
 
 ## 🔄 DRY-RUN MODE
-```bash
+```yaml
 DRY_RUN = True  
 ```
 Run for **7–14 days** before real trading.
@@ -148,7 +149,7 @@ The bot can be deployed as a systemd service for:
 ## 🚀 Going Live
 
 Only after extended DRY-RUN validation:
-```bash
+```yaml
 DRY_RUN = False  
 ```
 Start with **₹1,000–₹2,000** only.
